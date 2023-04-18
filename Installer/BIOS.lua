@@ -2,9 +2,18 @@ local totalCode, errorMessage = ""
 local installLink = "https://raw.githubusercontent.com/Auxirius/GleebOS/master/Installer/Installer.lua"
 
 print("Download: INSTALLER...")
-for chunk in component.proxy(component.list("internet")() or error("You need an internet component to install GleebOS")).request(installLink) do
-    totalCode = totalCode..chunk
+local handle, chunk = component.proxy(component.list("internet")() or error("Internet component required")).request(installLink)
+
+while true do 
+    chunk = handle.read(math.huge)
+
+    if chunk then
+        totalCode = totalCode .. chunk
+    else
+        break
+    end
 end
+
 print("Downloaded: INSTALLER")
 
 totalCode, errorMessage = load(totalCode, "=installer")
@@ -18,7 +27,6 @@ if totalCode then
 else
     error(errorMessage)
 end
-
-
+print("DONE")
 
 
