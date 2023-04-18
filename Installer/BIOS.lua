@@ -1,5 +1,5 @@
 local totalCode, errorMessage = ""
-local installLink = ""
+local installLink = "https://raw.githubusercontent.com/Auxirius/GleebOS/master/Installer/Installer.lua"
 local component = require("component")
 
 print("Download: INSTALLER...")

@@ -12,7 +12,7 @@ end
 local eeprom, gpu = findComponent("eeprom"), findComponent("gpu")
 local internet = require("internet") or missingComponent("Internet")
 
-local repoURL = ""
+local repoURL = "https://raw.githubusercontent.com/Auxirius/GleebOS/master/"
 local installURL = repoURL.."/Installer"
 
 gpu.bind(component.list("screen")() or missingComponent("Screen"))
