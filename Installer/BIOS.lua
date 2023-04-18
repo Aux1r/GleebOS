@@ -1,7 +1,6 @@
 local totalCode, errorMessage = ""
 local installLink = "https://raw.githubusercontent.com/Auxirius/GleebOS/master/Installer/Installer.lua"
 
-print("Download: INSTALLER...")
 local handle, chunk = component.proxy(component.list("internet")() or error("Internet component required")).request(installLink)
 
 while true do 
@@ -14,8 +13,6 @@ while true do
     end
 end
 
-print("Downloaded: INSTALLER")
-
 totalCode, errorMessage = load(totalCode, "=installer")
 
 if totalCode then
@@ -27,6 +24,4 @@ if totalCode then
 else
     error(errorMessage)
 end
-print("DONE")
-
 
