@@ -16,4 +16,6 @@ local eepromProxy, internetProxy, gpuProxy =
 
 gpuProxy.bind(getCompoAddr("screen"))
 
-local screenWidth, screenHeight = gpu.getResolution()
+local screenWidth, screenHeight = gpuProxy.getResolution()
+
+gpuProxy.setForeground(0xFFFFFF)
