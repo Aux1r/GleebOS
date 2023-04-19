@@ -19,3 +19,5 @@ gpuProxy.bind(getCompoAddr("screen"))
 local screenWidth, screenHeight = gpuProxy.getResolution()
 
 gpuProxy.setForeground(0xFFFFFF)
+
+computer.pullSignal()
