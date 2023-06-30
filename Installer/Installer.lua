@@ -56,7 +56,7 @@ local function status(text, needWait)
 	end
 end
 
-repeat
+while true do
     title()
-until testVal = 4
+end
 
